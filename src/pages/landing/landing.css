@@ -1,0 +1,36 @@
+#landing {
+  height: 100vh;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+#landing .formContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+#landing .formContainer .form form {
+  display: flex;
+  flex-direction: column;
+  margin: 40px;
+  text-align: center;
+}
+
+
+#landing .form form input {
+ margin: 1rem;
+ padding: 1rem 2rem;
+}
+
+#landing .form form .btn {
+  width: 90%;
+  padding: .5rem 1rem;
+  align-self: center;
+}
+
+

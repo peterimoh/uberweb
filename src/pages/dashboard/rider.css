@@ -1,0 +1,15 @@
+#rider{
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 30px 20px;
+    align-items: center;
+    text-align: center;
+}
+
+
+#rider .main{
+    margin: 20px;
+}

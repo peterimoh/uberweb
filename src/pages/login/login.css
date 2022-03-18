@@ -1,0 +1,26 @@
+#login {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+#login .form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#login .form form input {
+  margin: 1rem;
+  padding: 1rem 2rem;
+}
+
+#login .form form .btn {
+  width: 90%;
+  padding: 0.5rem 1rem;
+  align-self: center;
+}
