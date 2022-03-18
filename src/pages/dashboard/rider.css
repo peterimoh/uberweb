@@ -9,7 +9,20 @@
     text-align: center;
 }
 
+#rider .container, .main{
+    height: 100%;
+}
+
 
 #rider .main{
     margin: 20px;
+}
+
+#rider .input{
+    margin: 1rem;
+}
+
+#rider .bookingdisplay{
+    margin: 30px;
+    background-color: #fff;
 }

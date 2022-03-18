@@ -1,0 +1,33 @@
+#driver{
+    height: 100vh;
+    background-color: aqua;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    padding: 30px 20px;
+    align-items: center;
+    text-align: center;
+}
+
+#driver .available{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+#driver .update{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    margin: 20px;
+}
+
+#driver .switch{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
