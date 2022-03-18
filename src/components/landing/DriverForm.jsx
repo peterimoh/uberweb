@@ -7,7 +7,7 @@ import { register } from '../../action/auth.action';
 
 export const DriverForm = () => {
   const dispatch = useDispatch();
-  const { isSuccess, msg } = useSelector((state) => state.auth);
+  const { isSuccess } = useSelector((state) => state.auth);
 
   let navigate = useNavigate();
 
@@ -33,7 +33,6 @@ export const DriverForm = () => {
     <div className='form'>
       <form onSubmit={onSubmit} noValidate>
         <h5 className='post__title'>Register as a Driver</h5>
-        {/* {msg && <p style={{ color: 'tomato' }}>{msg}</p>} */}
 
         <input
           label='First Name'

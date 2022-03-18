@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { Availability } from '../../components/driver/Availability';
@@ -7,7 +7,6 @@ import './driver.css';
 
 const Driver = () => {
   const { user } = useSelector((state) => state.auth);
-  
 
   return (
     <main id='driver'>

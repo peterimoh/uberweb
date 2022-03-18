@@ -29,10 +29,9 @@ export const Availability = ({ user }) => {
     onSubmit(e);
   };
 
-  const { handleChange, onSubmit, value } = useForm({
+  const { onSubmit, value } = useForm({
     callback: () => {
       dispatch(updateAvailability(user._id, value));
-      // console.table(value);
     },
     initialState: {
       isAvailable: checked,

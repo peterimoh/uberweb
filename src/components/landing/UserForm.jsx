@@ -6,32 +6,30 @@ import { useForm } from '../../hook/useForm';
 import { register } from '../../action/auth.action';
 
 export const UserForm = () => {
-
   const dispatch = useDispatch();
-  const { isSuccess, msg } = useSelector(state => state.auth);
-    let navigate = useNavigate();
+  const { isSuccess, msg } = useSelector((state) => state.auth);
+  let navigate = useNavigate();
 
   const { handleChange, onSubmit, value } = useForm({
-    callback:  () => { dispatch(register(value)) },
+    callback: () => {
+      dispatch(register(value));
+    },
     initialState: {
       firstName: '',
       lastName: '',
       email: '',
       password: '',
-    }
+    },
   });
 
   useEffect(() => {
     isSuccess && navigate('/login');
   }, [isSuccess, navigate]);
-     
-
 
   return (
     <div className='form'>
       <form onSubmit={onSubmit} noValidate>
         <h5 className='post__title'>Register as a user</h5>
-        {/* {msg && <p style={{color: 'tomato'}}>{msg}</p>} */}
 
         <input
           label='First Name'

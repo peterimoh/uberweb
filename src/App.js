@@ -1,5 +1,4 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 
 import './App.css';
 import Landing from './pages/landing/Landing';
@@ -10,15 +9,19 @@ import { Rider } from './pages/dashboard/Rider';
 import { Driver } from './pages/dashboard/Driver';
 
 function App() {
-  const { isAuthenticated } = useSelector((state) => state.auth);
-
   return (
     <Router>
       <Routes>
         <Route path='/' element={<Landing />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/driver' element={<PrivateRoute>{<Driver/>}</PrivateRoute>} />
-        <Route path='/rider' element={<PrivateRoute>{<Rider/>}</PrivateRoute>} />
+        <Route
+          path='/driver'
+          element={<PrivateRoute>{<Driver />}</PrivateRoute>}
+        />
+        <Route
+          path='/rider'
+          element={<PrivateRoute>{<Rider />}</PrivateRoute>}
+        />
       </Routes>
     </Router>
   );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Routes, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 export const DriverRoute = ({ children }) => {
   return <>{children}</>;

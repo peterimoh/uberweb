@@ -24,7 +24,6 @@ const authReducer = (state = initialState, action) => {
     case Register.SIGNUP_FAIL:
       return {
         ...state,
-        // msg: action.payload.data,
         loading: false,
       };
     case Login.LOGIN_START:
@@ -41,7 +40,6 @@ const authReducer = (state = initialState, action) => {
     case Login.LOGIN_FAIL:
       return {
         ...state,
-        // msg: action.payload.data,
       };
 
     default:

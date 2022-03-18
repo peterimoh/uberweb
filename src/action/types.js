@@ -26,4 +26,9 @@ const UpdateAvailability = {
   FAIL: 'UPDATE_AVAILABILITY_FAIL',
 };
 
-export { Register, Login, GetAvailableDriver, UpdateAvailability };
+const BookDriver = {
+  SUCCESS: 'BOOK_DRIVER_SUCCESS',
+  FAIL: 'BOOK_DRIVER_FAIL',
+}
+
+export { Register, Login, GetAvailableDriver, UpdateAvailability, BookDriver };

@@ -10,15 +10,14 @@ import rootReducer from './reducer/index';
 import './index.css';
 
 const initialState = {};
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 const store = createStore(
   rootReducer,
   initialState,
   compose(
-    applyMiddleware(thunk),
-    composeEnhancers()
-    // window.devToolsExtension ? window.devToolsExtension() : (f) => f //------USE CHROME EXTENSION FOR REDUX------------------
+    applyMiddleware(thunk)
+    // composeEnhancers()
   )
 );
 

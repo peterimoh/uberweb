@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getDriver } from '../../action/driver.action';
+import { getDriver, updateBooking } from '../../action/driver.action';
 import { useForm } from '../../hook/useForm';
 
 export const Booking = ({ userLatitude, userLogitude }) => {
   const dispatch = useDispatch();
-  const { driver, loading, error } = useSelector((state) => state.driver);
-  const [driverDetails, setDriverDetails] = useState(null);
+  const { driver } = useSelector((state) => state.driver);
   const [distance, setDistance] = useState(0);
 
   const distanceCalculator = (lat1, lon1, lat2, lon2) => {
@@ -15,7 +14,6 @@ export const Booking = ({ userLatitude, userLogitude }) => {
       Math.pow(lat2 - lat1, 2) + Math.pow(lon2 - lon1, 2)
     );
     setDistance(outcome);
-    // return;
   };
 
   const { handleChange, onSubmit, value } = useForm({
@@ -36,7 +34,12 @@ export const Booking = ({ userLatitude, userLogitude }) => {
     },
   });
 
-  console.log(distance);
+  const setIsBooked = {
+    isBooked: true,
+  };
+  const handleBooking = (driverId) => {
+    dispatch(updateBooking(driverId, setIsBooked));
+  };
 
   return (
     <>
@@ -76,16 +79,22 @@ export const Booking = ({ userLatitude, userLogitude }) => {
             {driver.length !== 0 &&
               driver.map((x) => {
                 return (
-                  <ul>
+                  <ul key={x._id}>
                     <li>
-                      Name: `{x.firstName} {x.lastName}`{' '}
+                      Name: {x.firstName} {x.lastName}
                       <li>lat: {x.latitude}</li>
                       <li>lat: {x.longitude}</li>
                     </li>
                   </ul>
                 );
               })}
-            <button>Book</button>
+            <button
+              onClick={() =>
+                handleBooking(driver.length !== 0 && driver[0]._id)
+              }
+            >
+              Book
+            </button>
           </div>
         )}
       </div>
